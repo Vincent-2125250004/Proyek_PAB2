@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment">
+
+    <!--    Profile-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/photoProfile"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:rotation="90"
+        android:src="@drawable/profilevincent"
+        app:civ_border_color="#80FFFFFF"
+        app:civ_border_width="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/status_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Welcome Back"
+        android:textColor="#80000000"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/photoProfile"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nama_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Vincent"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@id/photoProfile"
+        app:layout_constraintTop_toBottomOf="@id/status_profile" />
+    <!--    End Profile-->
+    <!--    Kartu Kredit-->
+
+    <ImageView
+        android:id="@+id/shapeCard"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nama_profile" />
+
+    <TextView
+        android:id="@+id/saldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Your Balance"
+        android:textColor="#BF000000"
+        app:layout_constraintStart_toStartOf="@id/shapeCard"
+        app:layout_constraintTop_toTopOf="@id/shapeCard" />
+
+    <TextView
+        android:id="@+id/DigitSaldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Rp.153.000,00"
+        android:textColor="#BF000000"
+        android:textSize="35sp"
+        app:layout_constraintStart_toStartOf="@id/shapeCard"
+        app:layout_constraintTop_toBottomOf="@id/saldo" />
+
+    <TextView
+        android:id="@+id/nomor_kartu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="**** 153"
+        android:textColor="#BF000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/shapeCard"
+        app:layout_constraintTop_toBottomOf="@id/DigitSaldo" />
+
+    <ImageView
+        android:id="@+id/iconmastercard"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/mastercard_2019_logo"
+        android:textColor="#E5E5E5"
+        app:layout_constraintBottom_toBottomOf="@id/shapeCard"
+        app:layout_constraintEnd_toEndOf="@id/shapeCard" />
+
+    <TextView
+        android:id="@+id/tv_riwayat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Riwayat Transaksi"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shapeCard" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_riwayat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        tools:listitem="@layout/list_riwayat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_riwayat" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
