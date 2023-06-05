@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_detail.DetailActivity"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/BackHome"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Transaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_horizontal"
+                android:text="Transaksi"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/lataricon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Transaksi" />
+
+            <ImageView
+                android:id="@+id/IconKreditDebit"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/money_recive_svgrepo_com"
+                app:layout_constraintBottom_toBottomOf="@id/lataricon"
+                app:layout_constraintEnd_toEndOf="@id/lataricon"
+                app:layout_constraintStart_toStartOf="@id/lataricon"
+                app:layout_constraintTop_toTopOf="@id/lataricon" />
+            <TextView
+                android:id="@+id/tv_namatransDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Transaksi"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="45dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toEndOf="@id/lataricon"
+                app:layout_constraintTop_toBottomOf="@id/Transaksi"
+                />
+            <TextView
+                android:id="@+id/tv_tanggaltransaksidetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tanggal transaksi"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toEndOf="@id/lataricon"
+                app:layout_constraintTop_toBottomOf="@id/tv_namatransDetail"
+                />
+            <TextView
+                android:id="@+id/tv_tipetransaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipe Transaksi"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toEndOf="@id/tv_tanggaltransaksidetail"
+                app:layout_constraintTop_toBottomOf="@id/tv_namatransDetail"
+                />
+
+            <TextView
+                android:id="@+id/tv_detailjumlah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp.Jumlah"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Transaksi"
+                />
+
+            <TextView
+                android:id="@+id/Informasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_horizontal"
+                android:text="Informasi Pembayaran"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tanggaltransaksidetail"/>
+
+            <TextView
+                android:id="@+id/dariSaldo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dari \nSaldo Card"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Informasi"
+                />
+
+            <TextView
+                android:id="@+id/DigitSaldoDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp. Saldo"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/Informasi"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <TextView
+                android:id="@+id/tv_namatransaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Transaksi"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dariSaldo"
+                />
+            <TextView
+                android:id="@+id/tv_jumlahtrans1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp. Saldo"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/DigitSaldoDetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_jumlah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jumlah"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_namatransaksi"
+                />
+            <TextView
+                android:id="@+id/tv_jumlahpembayaran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp. Saldo"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_jumlahtrans1"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/Keterangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keterangan"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_jumlah"
+                />
+            <TextView
+                android:id="@+id/tv_Keterangan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keterangan"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Keterangan"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_Ubah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ubah"
+                android:textColor="#14213d"
+                android:backgroundTint="#fca311"
+                android:fontFamily="@font/poppins_semibold"
+                android:textAllCaps="false"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_Keterangan"
+                app:cornerRadius="15dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_Delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:textColor="#14213d"
+                android:backgroundTint="#fca311"
+                android:fontFamily="@font/poppins_semibold"
+                android:textAllCaps="false"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_Ubah"
+                app:cornerRadius="15dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

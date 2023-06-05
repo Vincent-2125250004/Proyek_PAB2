@@ -1,9 +1,11 @@
 package com.if4a.cashflow.models;
 
+import java.util.Date;
+
 public class ModelCash {
 
-    public String id, nama, jenis_transaksi, jumlah, tanggal_transaksi, keterangan;
-
+    public String id, nama, tipe_transaksi, keterangan, tanggal_transaksi;
+    public int jumlah;
     public String getId() {
         return id;
     }
@@ -12,11 +14,15 @@ public class ModelCash {
         return nama;
     }
 
-    public String getJenis_transaksi() {
-        return jenis_transaksi;
+    public String getTipe_transaksi() {
+        return tipe_transaksi;
     }
 
-    public String getJumlah() {
+    public void setJumlah(int jumlah) {
+        this.jumlah = jumlah;
+    }
+
+    public int getJumlah() {
         return jumlah;
     }
 
