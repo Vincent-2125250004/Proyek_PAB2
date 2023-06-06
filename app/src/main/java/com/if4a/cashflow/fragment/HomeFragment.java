@@ -15,14 +15,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.if4a.cashflow.R;
-import com.if4a.cashflow.activity.MainActivity;
+import com.if4a.cashflow.activity_detail.DetailActivity;
 import com.if4a.cashflow.adapter.AdapterCash;
 import com.if4a.cashflow.api.APIRequestData;
 import com.if4a.cashflow.api.RetroServer;
 import com.if4a.cashflow.models.ModelCash;
 import com.if4a.cashflow.models.ModelResponse;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -34,7 +33,7 @@ import retrofit2.Response;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment  {
 
     private RecyclerView rvRiwayat;
     private RecyclerView.Adapter adRiwayat;
@@ -42,6 +41,9 @@ public class HomeFragment extends Fragment {
     private List<ModelCash> listRiwayat;
 
     private double saldo =0.0;
+
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -109,8 +111,8 @@ public class HomeFragment extends Fragment {
                 adRiwayat = new AdapterCash(listRiwayat, getView().getContext());
                 rvRiwayat.setAdapter(adRiwayat);
 
-                adRiwayat.notifyDataSetChanged();
 
+                adRiwayat.notifyDataSetChanged();
                 calculatedSaldo();
 
             }
@@ -132,9 +134,10 @@ public class HomeFragment extends Fragment {
     public void onResume() {
         super.onResume();
         retrieveRiwayat();
+
     }
 
-    private void calculatedSaldo (){
+    public void calculatedSaldo (){
         saldo=0.0;
 
         for (ModelCash cash :listRiwayat){
@@ -142,10 +145,16 @@ public class HomeFragment extends Fragment {
                 saldo -= cash.getJumlah();
             } else if (cash.getTipe_transaksi().equalsIgnoreCase("Debit")) {
                 saldo += cash.getJumlah();
+
             }
         }
 
         TextView tvSaldo = getView().findViewById(R.id.DigitSaldo);
-        tvSaldo.setText(String.valueOf(saldo));
+        tvSaldo.setText("Rp." + String.valueOf(saldo));
+
     }
+
+
+
+
 }

@@ -17,13 +17,14 @@ import com.google.android.material.button.MaterialButton;
 import com.if4a.cashflow.R;
 import com.if4a.cashflow.activity.UbahActivity;
 import com.if4a.cashflow.adapter.AdapterCash;
+import com.if4a.cashflow.fragment.HomeFragment;
 import com.if4a.cashflow.models.ModelCash;
 
 import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
     public TextView tvNamaTransDetail, tvTanggalTransaksiDetail, tvDetailJumlah,
-            tvNamaTransaksi, tvJumlahTrans1, tvJumlahPembayaran, tvKeterangan, tvTipetransaksi;
+            tvNamaTransaksi, tvJumlahTrans1, tvJumlahPembayaran, tvKeterangan, tvTipetransaksi,tvDigitSaldo;
     public MaterialButton btn_ubah, btn_delete;
     public ImageButton Backhome;
     public ImageView IconKreditDebit;
@@ -32,6 +33,7 @@ public class DetailActivity extends AppCompatActivity {
     private Context ctx;
     private String id;
 
+    private double saldo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class DetailActivity extends AppCompatActivity {
         tvKeterangan = findViewById(R.id.tv_Keterangan);
         tvTipetransaksi = findViewById(R.id.tv_tipetransaksi);
         IconKreditDebit = findViewById(R.id.IconKreditDebit);
+        tvDigitSaldo = findViewById(R.id.DigitSaldoDetail);
         Backhome = findViewById(R.id.BackHome);
         btn_ubah = findViewById(R.id.btn_Ubah);
         btn_delete = findViewById(R.id.btn_Delete);
@@ -61,7 +64,6 @@ public class DetailActivity extends AppCompatActivity {
         tvJumlahPembayaran.setText(String.valueOf(intent.getStringExtra("varJumlah")));
         tvDetailJumlah.setText(String.valueOf(intent.getStringExtra("varJumlah")));
         tvTipetransaksi.setText(intent.getStringExtra("varTipeTransaksi"));
-
 
 
         if (tvTipetransaksi.getText().equals("Kredit")) {

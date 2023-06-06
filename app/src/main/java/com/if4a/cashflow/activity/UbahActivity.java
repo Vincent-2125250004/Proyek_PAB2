@@ -42,7 +42,7 @@ public class UbahActivity extends AppCompatActivity {
     private Spinner spTipeTrans;
     private ImageButton Backhome;
     private MaterialButton btnUbah;
-    private String Id, Nama, Jumlah, TipeTransaksi, Tanggal, Keterangan;
+    private String  Nama, Jumlah, TipeTransaksi, Tanggal, Keterangan;
     private String yId, yNama, yJumlah, yTipeTransaksi, yTanggal, yKeterangan;
 
     @Override
@@ -74,34 +74,7 @@ public class UbahActivity extends AppCompatActivity {
         etJumlahTrans.setText(yJumlah);
         etKeterangan.setText(yKeterangan);
 
-        Calendar calendar = Calendar.getInstance();
-        int currentYear = calendar.get(Calendar.YEAR);
-        int currentMonth = calendar.get(Calendar.MONTH);
-        int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
-
-        calendar.set(Calendar.DAY_OF_WEEK, calendar.getFirstDayOfWeek());
-        int startYear = calendar.get(Calendar.YEAR);
-        int startMonth = calendar.get(Calendar.MONTH);
-        int startDay = calendar.get(Calendar.DAY_OF_MONTH);
-
-        calendar.set(Calendar.DAY_OF_WEEK, calendar.getFirstDayOfWeek() + 6);
-        int endYear = calendar.get(Calendar.YEAR);
-        int endMonth = calendar.get(Calendar.MONTH);
-        int endDay = calendar.get(Calendar.DAY_OF_MONTH);
-
-        calendar.set(startYear, startMonth, startDay);
-        long minDate = calendar.getTimeInMillis();
-        calendar.set(endYear, endMonth, endDay);
-        long maxDate = calendar.getTimeInMillis();
-        Datepicker.setMinDate(minDate);
-        Datepicker.setMaxDate(maxDate);
-
-        Datepicker.init(startYear, startMonth, startDay, null);
-
-        int dayOfMonth = Datepicker.getDayOfMonth();
-        int month = Datepicker.getMonth() + 1;
-        int year = Datepicker.getYear();
-        String selectedDate = year + "/" + month + "/" + dayOfMonth;
+        Datepicker.setClickable(false);
 
         ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) spTipeTrans.getAdapter();
 
@@ -140,7 +113,7 @@ public class UbahActivity extends AppCompatActivity {
                 Jumlah = etJumlahTrans.getText().toString();
                 Keterangan = etKeterangan.getText().toString();
                 TipeTransaksi = spTipeTrans.getSelectedItem().toString();
-                Tanggal = selectedDate;
+                Tanggal = yTanggal;
 
                 if (Nama.trim().isEmpty()) {
                     etNamaTrans.setError("Nama Transaksi Tidak Boleh Kosong");

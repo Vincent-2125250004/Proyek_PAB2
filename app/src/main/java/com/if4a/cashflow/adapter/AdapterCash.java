@@ -32,9 +32,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AdapterCash extends RecyclerView.Adapter<AdapterCash.VHCash> {
-    private List<ModelCash> listriwayat;
+    public List<ModelCash> listriwayat;
     private Context ctx;
-    private double totaldebit= 0.0, totalkredit =0.0;
+
+
 
     public AdapterCash(List<ModelCash> listriwayat, Context ctx) {
         this.listriwayat = listriwayat;
@@ -133,6 +134,18 @@ public class AdapterCash extends RecyclerView.Adapter<AdapterCash.VHCash> {
             }
         });
     }
+
+
+    public List<ModelCash> getListRiwayat(){
+        return listriwayat;
+    }
+
+    public void updateData(List<ModelCash> newData){
+        listriwayat.clear();
+        listriwayat.addAll(newData);
+        notifyDataSetChanged();
+    }
+
 
 
 
