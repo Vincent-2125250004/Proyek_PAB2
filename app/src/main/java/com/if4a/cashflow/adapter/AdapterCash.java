@@ -2,8 +2,6 @@ package com.if4a.cashflow.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +18,9 @@ import com.if4a.cashflow.R;
 import com.if4a.cashflow.activity_detail.DetailActivity;
 import com.if4a.cashflow.api.APIRequestData;
 import com.if4a.cashflow.api.RetroServer;
-import com.if4a.cashflow.fragment.HomeFragment;
 import com.if4a.cashflow.models.ModelCash;
 import com.if4a.cashflow.models.ModelResponse;
 
-import java.text.BreakIterator;
 import java.util.List;
 
 import retrofit2.Call;
@@ -140,11 +136,10 @@ public class AdapterCash extends RecyclerView.Adapter<AdapterCash.VHCash> {
         return listriwayat;
     }
 
-    public void updateData(List<ModelCash> newData){
-        listriwayat.clear();
-        listriwayat.addAll(newData);
-        notifyDataSetChanged();
+    public List<ModelCash> getData(List<ModelCash> datalist) {
+        return listriwayat;
     }
+
 
 
 

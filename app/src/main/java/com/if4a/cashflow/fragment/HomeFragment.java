@@ -22,6 +22,7 @@ import com.if4a.cashflow.api.RetroServer;
 import com.if4a.cashflow.models.ModelCash;
 import com.if4a.cashflow.models.ModelResponse;
 
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -41,9 +42,6 @@ public class HomeFragment extends Fragment  {
     private List<ModelCash> listRiwayat;
 
     private double saldo =0.0;
-
-
-
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -153,6 +151,8 @@ public class HomeFragment extends Fragment  {
         tvSaldo.setText("Rp." + String.valueOf(saldo));
 
     }
+
+
 
 
 
