@@ -132,16 +132,6 @@ public class AdapterCash extends RecyclerView.Adapter<AdapterCash.VHCash> {
     }
 
 
-    public List<ModelCash> getListRiwayat(){
-        return listriwayat;
-    }
-
-    public List<ModelCash> getData(List<ModelCash> datalist) {
-        return listriwayat;
-    }
-
-
-
 
 
 }

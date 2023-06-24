@@ -2,13 +2,24 @@ package com.if4a.cashflow.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.if4a.cashflow.R;
+import com.if4a.cashflow.adapter.AdapterCash;
+import com.if4a.cashflow.api.APIRequestData;
+import com.if4a.cashflow.api.RetroServer;
+import com.if4a.cashflow.models.ModelResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,6 +67,8 @@ public class StatistikFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
